@@ -1,10 +1,15 @@
 $(document).ready(function () {
-    $('header').load('header.html',() => {
+	let hFile = 'header.html';
+	let fFile = 'footer.html';
+	if (notHome) hFile = '../header.html';
+	if (notHome) fFile = '../footer.html';
+
+    $('header').load(hFile,() => {
         $('.sidenav').sidenav();
         $('a[href="/portfolio/'+getPage()+'"]').hide();
         $('.fixed-action-btn').floatingActionButton();
     });
-    $('footer').load('footer.html');
+    $('footer').load(fFile);
     $('.tooltipped').tooltip();
 });
 
@@ -53,19 +58,19 @@ app.controller('myCtrl', function($scope, $interval) {
     let keyword = '';
 
     switch (getPage()) {
-        case 'android.html':
+        case 'android':
             keyword = 'Android';
             break;
 
-        case 'web.html':
+        case 'web':
             keyword = 'Web';
             break;
 
-        case 'games.html':
+        case 'games':
             keyword = 'Games';
             break;
 
-        case 'windows.html':
+        case 'windows':
             keyword = 'Windows';
             break;
     }
