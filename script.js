@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	let hFile = 'header.html';
 	let fFile = 'footer.html';
+	
+	const notHome = getPage() != '';
 	if (notHome) hFile = '../header.html';
 	if (notHome) fFile = '../footer.html';
 
@@ -14,7 +16,7 @@ $(document).ready(function () {
 });
 
 function getPage() {
-    return location.href.split('/').pop();
+    return location.href.split('/')[3];
 }
 
 var app = angular.module('myApp', []);
