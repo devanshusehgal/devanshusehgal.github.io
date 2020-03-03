@@ -9,10 +9,10 @@ $(document).ready(function () {
     $('header').load(hFile,() => {
         $('.sidenav').sidenav();
         $('a[href="/portfolio/'+getPage()+'"]').hide();
-        $('.fixed-action-btn').floatingActionButton();
+				$('.fixed-action-btn').floatingActionButton();
     });
     $('footer').load(fFile);
-    $('.tooltipped').tooltip();
+		$('.tooltipped').tooltip();
 });
 
 function getPage() {
